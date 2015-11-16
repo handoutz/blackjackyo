@@ -1,0 +1,103 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfBlackjack"
+        xmlns:ts.Effects="http://trustsoft.pro/2014/xaml/effects" x:Class="WpfBlackjack.MainWindow"
+        mc:Ignorable="d"
+        Title="BlackJak" Height="350" Width="656.165" MinWidth="525" MinHeight="350">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="90"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="90"/>
+        </Grid.RowDefinitions>
+        <WrapPanel x:Name="wpDealer" Grid.Row="0"/>
+        <WrapPanel x:Name="wpPlayer" Margin="0,0,0,0" Grid.RowSpan="1" Grid.Row="2"/>
+        <Button x:Name="btnHit" Content="Hit" HorizontalAlignment="Left" Margin="10,35,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75"/>
+        <Label x:Name="lblDealerSum" Content="Dealer Sum: " HorizontalAlignment="Left" Margin="108,21,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Button x:Name="btnBet" Content="Bet" HorizontalAlignment="Left" Margin="10,14,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75"/>
+        <Label x:Name="lblPlayerSum" Content="Your Sum: " HorizontalAlignment="Left" Margin="108,52,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Label x:Name="lblStatus" Content="OKAY" HorizontalAlignment="Left" Margin="108,83,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Button x:Name="btnStand" Content="Stand" HorizontalAlignment="Left" Margin="10,55,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75"/>
+        <Grid Margin="0" Grid.Row="1" HorizontalAlignment="Right" Width="380">
+            <Grid.DataContext>
+                <local:GameState/>
+            </Grid.DataContext>
+            <Button x:Name="btnBetA" Content="+5" HorizontalAlignment="Left" Margin="125,6,0,0" VerticalAlignment="Top" Width="34" Height="16" FontSize="9.333" BorderThickness="0">
+                <Button.BorderBrush>
+                    <ImageBrush/>
+                </Button.BorderBrush>
+                <Button.Effect>
+                    <DropShadowEffect ShadowDepth="1" Opacity="0.5" BlurRadius="4"/>
+                </Button.Effect>
+            </Button>
+            <Button x:Name="btnBetB" Content="+5" HorizontalAlignment="Left" Margin="125,26,0,0" VerticalAlignment="Top" Width="34" Height="16" FontSize="9.333" BorderThickness="0">
+                <Button.BorderBrush>
+                    <ImageBrush/>
+                </Button.BorderBrush>
+                <Button.Effect>
+                    <DropShadowEffect ShadowDepth="1" Opacity="0.5" BlurRadius="4"/>
+                </Button.Effect>
+            </Button>
+            <Button x:Name="btnBetC" Content="+5" HorizontalAlignment="Left" Margin="125,47,0,0" VerticalAlignment="Top" Width="34" Height="16" FontSize="9.333" BorderThickness="0">
+                <Button.BorderBrush>
+                    <ImageBrush/>
+                </Button.BorderBrush>
+                <Button.Effect>
+                    <DropShadowEffect ShadowDepth="1" Opacity="0.5" BlurRadius="4"/>
+                </Button.Effect>
+            </Button>
+            <Button x:Name="btnBetD" Content="+5" HorizontalAlignment="Left" Margin="125,68,0,0" VerticalAlignment="Top" Width="34" Height="16" FontSize="9.333" BorderThickness="0">
+                <Button.BorderBrush>
+                    <ImageBrush/>
+                </Button.BorderBrush>
+                <Button.Effect>
+                    <DropShadowEffect ShadowDepth="1" Opacity="0.5" BlurRadius="4"/>
+                </Button.Effect>
+            </Button>
+            <Label x:Name="agasfdf" Content="Balance" HorizontalAlignment="Left" VerticalAlignment="Top" Width="56" HorizontalContentAlignment="Right"/>
+            <Label x:Name="lblBalance" Content="{Binding PlayerBalance}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="61,0,0,0" Cursor="" Width="64" HorizontalContentAlignment="Center"/>
+            <Label x:Name="agasfdf_Copy1" Content="Total Bet" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,26,0,0" HorizontalContentAlignment="Right" Width="56"/>
+            <Label x:Name="lblBet" Content="{Binding CurrentBet}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="61,26,0,0" Cursor="" Width="64" HorizontalContentAlignment="Center"/>
+            <Label x:Name="agasfdf_Copy" Content="Last Win" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,52,0,0" HorizontalContentAlignment="Right" Width="56"/>
+            <Label x:Name="lblBet_Copy" Content="{Binding LastWin}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="61,52,0,0" Cursor="" Width="64" HorizontalContentAlignment="Center"/>
+            <Button x:Name="btnMBetA" Content="+5" HorizontalAlignment="Left" Margin="164,6,0,0" VerticalAlignment="Top" Width="34" Height="16" FontSize="9.333" BorderThickness="0">
+                <Button.BorderBrush>
+                    <ImageBrush/>
+                </Button.BorderBrush>
+                <Button.Effect>
+                    <DropShadowEffect ShadowDepth="1" Opacity="0.5" BlurRadius="4"/>
+                </Button.Effect>
+            </Button>
+            <Button x:Name="btnMBetB" Content="+5" HorizontalAlignment="Left" Margin="164,26,0,0" VerticalAlignment="Top" Width="34" Height="16" FontSize="9.333" BorderThickness="0">
+                <Button.BorderBrush>
+                    <ImageBrush/>
+                </Button.BorderBrush>
+                <Button.Effect>
+                    <DropShadowEffect ShadowDepth="1" Opacity="0.5" BlurRadius="4"/>
+                </Button.Effect>
+            </Button>
+            <Button x:Name="btnMBetC" Content="+5" HorizontalAlignment="Left" Margin="164,47,0,0" VerticalAlignment="Top" Width="34" Height="16" FontSize="9.333" BorderThickness="0">
+                <Button.BorderBrush>
+                    <ImageBrush/>
+                </Button.BorderBrush>
+                <Button.Effect>
+                    <DropShadowEffect ShadowDepth="1" Opacity="0.5" BlurRadius="4"/>
+                </Button.Effect>
+            </Button>
+            <Button x:Name="btnMBetD" Content="+5" HorizontalAlignment="Left" Margin="164,68,0,0" VerticalAlignment="Top" Width="34" Height="16" FontSize="9.333" BorderThickness="0">
+                <Button.BorderBrush>
+                    <ImageBrush/>
+                </Button.BorderBrush>
+                <Button.Effect>
+                    <DropShadowEffect ShadowDepth="1" Opacity="0.5" BlurRadius="4"/>
+                </Button.Effect>
+            </Button>
+            <WrapPanel x:Name="wpChipArea" HorizontalAlignment="Right" Height="119" Margin="0" Width="160"/>
+        </Grid>
+        <Button x:Name="btnDoubleUp" Content="Double Up" HorizontalAlignment="Left" Margin="10,75,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75"/>
+
+    </Grid>
+</Window>
